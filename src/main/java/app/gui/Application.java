@@ -267,10 +267,10 @@ public class Application {
         });
 
         getTopGradeButton.addActionListener(event -> {
-            final String course = courseField.getText();
+            final String course1 = courseField.getText();
 
             try {
-                final float topGrade = getTopGradeUseCase.getTopGrade(course);
+                final float topGrade = getTopGradeUseCase.getTopGrade(course1);
                 JOptionPane.showMessageDialog(jFrame, "Top Grade: " + topGrade);
                 courseField.setText("");
             }
@@ -293,6 +293,7 @@ public class Application {
         theCard.add(new JLabel("The course you want to calculate the team average for:"));
         theCard.add(courseField);
         theCard.add(getAverageButton);
+        theCard.add(getTopGradeButton);
         theCard.add(leaveTeamButton);
         theCard.add(resultLabel);
         return theCard;
