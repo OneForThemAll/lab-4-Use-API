@@ -25,8 +25,13 @@ public final class GetAverageGradeUseCase {
         int count = 0;
         // TODO Task 3b: Go to the MongoGradeDataBase class and implement getMyTeam.
         final Team team = gradeDataBase.getMyTeam();
+
+        for (String member : team.getMembers()) {
+            count += 1;
+            sum += gradeDataBase.getGrade(member, course).getGrade();
+        }
         // Call the API to get all the grades for the course for all your team members
-        // TODO Task 3a: Complete the logic of calculating the average course grade for
+        // Task 3a: Complete the logic of calculating the average course grade for
         //              your team members. Hint: the getGrades method might be useful.
 
         if (count == 0) {
